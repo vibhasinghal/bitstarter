@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My First Bitstarter</title>
+    <title>Spot A Sale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
@@ -12,6 +12,30 @@
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
           rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Croissant+One|Bigelow+Rules|Meie+Script' rel='stylesheet' type='text/css'>
+	<script>
+
+$(function(){
+$('.carousel').carousel({
+      interval: 2000
+    });
+$('.carousel-control.right').trigger('click');
+});
+
+function hideMyAlert() {
+    $('#myalert').hide();    
+}
+
+function clickAbout() {
+    $('#myalert').show();    
+}
+
+$(document).ready(function(){
+    $('#myalert').hide(); 
+ });
+
+
+</script>
     <style type="text/css">
 
       /* Large desktop */
@@ -28,7 +52,7 @@
       }
 
       /* Landscape phones and down */
-      @media (max-width: 480px) { 
+      @media (max-width: 520px) { 
        .copy {
          padding: 2.5% 10%;
        }
@@ -97,11 +121,39 @@
       .footer a {
         color: #ccccff;
       }
+
+    .myheading{
+font-family: 'Croissant One', cursive;
+font-style: normal;
+font-weight: 700;
+font-size: 54px;
+text-transform: none;
+text-decoration: none;
+letter-spacing: 0em;
+word-spacing: 0em;
+  }
+
+.mytagline 
+{
+font-family: fantasy;
+font-weight: 700;
+font-size:54px;
+text-transform: none;
+text-decoration: none;
+letter-spacing: 0em;
+word-spacing: 0em;
+color: red;
+}
+#myalert {display: none;}
     </style>
   </head>
 <body>
  <!-- Mobile-friendly navbar adapted from example. -->
     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
+<div id="myalert" class="alert alert-block">
+  <button type="button" class="close" onclick="javascript:hideMyAlert()">&times;</button>
+  Class project for Courser's Stanford Startup Engineering Course
+</div>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -111,12 +163,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Bitstarter</a>
+          <a class="brand myheading" href="#">Spot A Sale</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+	     <li><a href="#" onclick="javascript:clickAbout()">About</a></li>
+              <li><a href="mailto:vibha.singhal@gmail.com">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -132,20 +184,49 @@
       <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
       <div class="row-fluid heading">
         <div class="span12">
-          <h1>Product</h1>
+	   <img src="http://i.imgur.com/rnOjqXb.jpg" width="300px"/>
+          <h1 class="myheading">Spot A Sale</h1>
         </div>
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
           <!-- Special typography from Bootstrap for lead paragraph. -->
           <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
-          <p class="lead">One sentence description.</p>
+<p class="lead mytagline">I am feeling like Shopping !
+<img src="http://i.imgur.com/ayS46cb.jpg" width="100px"/>
+</p>
         </div>
       </div>
       <div class="row-fluid pitch">
         <div class="span5 offset1 video">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
-        </div>
+<!--          <img class="img-polaroid" src="http://placehold.it/480x300">-->
+   <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                  <li data-target="#myCarousel" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="http://i.imgur.com/XAZaAuv.jpg"  alt="">
+                  </div>
+                  <div class="item">
+                    <img src="http://i.imgur.com/yHJBEiJ.jpg" alt="" >
+                  </div>
+                  <div class="item">
+                    <img src="http://i.imgur.com/Mms1wA7.jpg" alt="" >
+                  </div>
+                  <div class="item">
+                    <img src="http://i.imgur.com/S15yBNQ.jpg" alt="" >
+                  </div>
+                  <div class="item">
+                    <img src="http://i.imgur.com/jAnIokT.jpg" alt="" >
+                  </div>
+                </div>
+              </div>
+            </div>
 
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
         <div class="span5 actions">
@@ -199,43 +280,22 @@
       <!-- http://placehold.it -->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+          <img class="img-polaroid" src="http://i.imgur.com/w3q88qc.png">
         </div>
         <div class="span5 copy">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
-          </p>
+	<p>
+	Like me, do you love to shop especially when there is a sale going on ? Do you find yourself googling for deals or ouring over newspaper to see if your favorite store has a sale going on ? Do you have friends who find the most amazing bargains ? Don't you hate it when after paying you come to know that the things you just purchased would have been 10% cheaper if you had used you so and so credit card. If one or more of this is true, then I have the perfect app for you. Your own shopping assistant, SpotADeal. 
+</p>
         </div>
       </div>
 
       <div class="row-fluid section2">
         <div class="span5 offset1 copy copy-right">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
-          </p>
+<p> Every morning, SpotADeal will have the latest and greatest deals summarized for you. You enter a shopping mall and it will find the stores you could visit and places you could eat. Looking for something specific, ask SpotADeal and it will help you find it. You found a great steal, SpotADeal it to your friends and they will do the same for you.  </p>
+</p>
         </div>
         <div class="span5 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+          <img class="img-polaroid" src="http://i.imgur.com/U5g7zKv.png">
         </div>
       </div>
 
@@ -244,18 +304,18 @@
       <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
       <div class="row-fluid faq">
           <div class="span10 offset1">
-            <h3>FAQ</h3>
+            <h3>Curious ?</h3>
             <div class="accordion" id="accordion2">
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseOne">
-                    What does FAQ stand for?
+                    What is this about ?
                   </a>
                 </div>
                 <div id="collapseOne" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    Frequently Asked Question.
+                   I am taking a course on Startup Engineering @ Coursera. This product is my class project. The intent of the course is to enable students to float their own startups. However, I would recommend this course for all software engineers. It introduces you all tools and utilities you should know about but did not bother to learn about. 
                   </div>
                 </div>
               </div>
@@ -263,12 +323,12 @@
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseTwo">
-                    What's a Frequently Asked Question?
+                    What do I need from you ?
                   </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    A question which is commonly asked by users.
+                    To pass this course I would need your support in form of Facebook likes or Twitter retweets.
                   </div>
                 </div>
               </div>
@@ -281,11 +341,7 @@
       <!-- http://creativecommons.org/licenses/ -->
       <div class="row-fluid footer">
         <div class="span12">
-          <p>This work is licensed under
-            the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC
-              By-SA 3.0
-            </a>, without all the cruft that would otherwise be
-            put at the bottom of the page.</p>
+<p>Class Project for <a href="http://www.coursera.com">Coursera's</a> <a href="https://class.coursera.org/startup-001">Stanford Startup Engineering Course</a></p>
         </div>
       </div>
     </div>
